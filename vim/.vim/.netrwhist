@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/stloufra'
+let g:netrw_dirhist_5='/home/stloufra/git'
+let g:netrw_dirhist_4='/home/stloufra/git/tnl'
+let g:netrw_dirhist_3='/home/stloufra/git/tnl/src'
+let g:netrw_dirhist_2='/home/stloufra/git/tnl/src/TNL'
+let g:netrw_dirhist_1='/home/stloufra/git/tnl/src/TNL/Arithmetics'
