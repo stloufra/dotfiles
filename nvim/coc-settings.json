@@ -1,1 +1,11 @@
-
+{
+  "languageserver": {
+    "myServer": {
+      "command": "path/to/server",
+      "args": ["--stdio"],
+      "filetypes": ["cpp", "c"],
+      "rootPatterns": [".git", "compile_commands.json"],
+      "initializationOptions": {}
+    }
+  }
+}
