@@ -85,8 +85,28 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-nnoremap <F2> :w<Enter>
+nnoremap <F2> :w<Enter>                                                                                                                                                                   
+nnoremap <F3> :q<Enter>
 nnoremap <F4> :wq<Enter>
+nnoremap <F5> :q!<Enter>
+
+" fzf
+nnoremap <C-t> :Files<CR>
+nnoremap <C-r> :Buffers<CR>
+nnoremap <leader><leader> :Rg<CR>
+
+"coc
+nnoremap gd <Plug>(coc-definition)
+nnoremap gi <Plug>(coc-implementation)
+nnoremap gr <Plug>(coc-references)
+
+" Highlighting for CoC suggestions
+hi! link CocMenuSel PmenuSel
+hi! link CocPumMenu Pmenu
+hi! link CocPumVirtualText Comment
+
+
+nnoremap U <C-r>
 
 " Highlighting for CoC suggestions
 hi! link CocMenuSel PmenuSel
@@ -106,9 +126,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch':'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug "olimorris/onedarkpro.nvim"
     Plug 'dracula/vim', { 'as':'dracula' }
-
 call plug#end()
 
 " Set the colorscheme

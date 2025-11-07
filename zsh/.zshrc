@@ -4,7 +4,9 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export EDITOR=nvim 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
 export PATH="$PATH:$HOME/MG5_aMC_v3.6.4/bin"
+export CADNA_PATH="/home/stloufra/git/cadnaForPromise"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -152,6 +154,54 @@ function fe() {
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
+# Bind Print Screen key to copy screenshot to clipboard
+if [[ "$DISPLAY" != "" ]]; then
+  # Using 'maim' for full-screen screenshot
+  bindkey -s '^[[2~' 'maim | xclip -selection clipboard -t image/png\n'
+fi
+
+
+# Start xbindkeys if not already running
+if ! pgrep -x "xbindkeys" > /dev/null; then
+    xbindkeys >/dev/null 2>&1 & disown
+fi
+
+# Start feh if not already running
+#if ! pgrep -x "feh" > /dev/null; then
+#    ~/.fehbg >/dev/null 2>&1 & disown
+#fi
+
+# --- 🌤️ Fancy CERN Weather Banner (once per day) ---
+if [[ $- == *i* ]]; then
+    CYAN="\033[1;36m"
+    YELLOW="\033[1;33m"
+    RESET="\033[0m"
+
+    CACHE_DIR="$HOME/.cache"
+    CACHE_FILE="$CACHE_DIR/cern_weather.txt"
+    TODAY=$(date +%Y-%m-%d)
+
+    mkdir -p "$CACHE_DIR"
+
+    # Only fetch if cache is missing or outdated
+    if [[ ! -f "$CACHE_FILE" ]] || ! grep -q "$TODAY" "$CACHE_FILE"; then
+        {
+            echo "$TODAY"
+            echo
+            curl -s 'wttr.in/Geneva?1n' \
+              | sed '1,/^$/d' \
+              | sed '/^Location:/,$d' \
+              | sed '/^Follow/d'
+        } > "$CACHE_FILE"
+    fi
+
+    echo
+    echo -e "${CYAN}┌──────────────────────────────────────────┐${RESET}"
+    echo -e "${CYAN}│${RESET}   ${YELLOW}Weather at CERN (Geneva) 🌤️${RESET}"
+    echo -e "${CYAN}└──────────────────────────────────────────┘${RESET}"
+    sed '1d' "$CACHE_FILE"  # skip date line
+    echo
+fi
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
