@@ -19,8 +19,7 @@ set cursorline
 
 "more pleasant edit 
 set nowrap 
-
-highlight CursorLine   cterm=underline term=underline guibg=NONE gui=underline
+highlight CursorLine cterm=NONE term=NONE gui=underline guibg=NONE
 "highlight CursorColumn ctermbg=lightgrey guibg=lightgrey
 
 " Set shift width to 4 spaces.
@@ -86,7 +85,19 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 nnoremap <F2> :w<Enter>
+nnoremap <F3> :q<Enter>
 nnoremap <F4> :wq<Enter>
+nnoremap <F5> :q!<Enter>
+
+" fzf
+nnoremap <C-t> :Files<CR>
+nnoremap <C-r> :Buffers<CR>
+nnoremap <leader><leader> :Rg<CR>
+
+"coc
+nnoremap gd <Plug>(coc-definition)
+nnoremap gi <Plug>(coc-implementation)
+nnoremap gr <Plug>(coc-references)
 
 " Highlighting for CoC suggestions
 hi! link CocMenuSel PmenuSel
@@ -106,13 +117,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch':'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug "olimorris/onedarkpro.nvim"
     Plug 'dracula/vim', { 'as':'dracula' }
-
 call plug#end()
 
 " Set the colorscheme
 syntax on
 
 set termguicolors
-colorscheme dracula 
+colorscheme dracula
