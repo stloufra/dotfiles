@@ -146,6 +146,17 @@ while true; do
     esac
 done
 echo "================================================================"
+while true; do
+    read -p "Do you want to install cadna4mg5?[y/n]" yn 
+    case $yn in
+        [Yy]* ) ./install_cd4mg5.sh;break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+echo "================================================================"
 echo "Please run following commands"
 echo " source ~/.bashrc && bind -f ~/.inputrc"
+echo " then launch vim and :PlugInstall
 echo "================================================================"
