@@ -145,7 +145,6 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
-
 echo "================================================================"
 echo "Please run following commands"
 echo " source ~/.bashrc && bind -f ~/.inputrc"
