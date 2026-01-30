@@ -60,6 +60,7 @@ vim.keymap.set('n', '<F2>', ':w<CR>')
 vim.keymap.set('n', '<F4>', ':wq<CR>')
 vim.keymap.set('n', '<F3>', ':q<CR>')
 vim.keymap.set('n', '<F5>', ':q!<CR>')
+vim.keymap.set('n', '<U>', '<C-r>')
 
 
 -- Setup Lazy plugin manager

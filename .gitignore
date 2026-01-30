@@ -1,0 +1,13 @@
+# Ignore history files
+zsh/.zsh_history
+*.log
+.DS_Store
+
+# Ignore sensitive files
+**/secrets.txt
+**/private.key
+
+# Ignore backup files
+*.bak
+*.backup
+*~

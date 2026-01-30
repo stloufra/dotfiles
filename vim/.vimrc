@@ -84,7 +84,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-nnoremap <F2> :w<Enter>
+nnoremap <F2> :w<Enter>                                                                                                                                                                   
 nnoremap <F3> :q<Enter>
 nnoremap <F4> :wq<Enter>
 nnoremap <F5> :q!<Enter>
@@ -98,6 +98,14 @@ nnoremap <leader><leader> :Rg<CR>
 nnoremap gd <Plug>(coc-definition)
 nnoremap gi <Plug>(coc-implementation)
 nnoremap gr <Plug>(coc-references)
+
+" Highlighting for CoC suggestions
+hi! link CocMenuSel PmenuSel
+hi! link CocPumMenu Pmenu
+hi! link CocPumVirtualText Comment
+
+
+nnoremap U <C-r>
 
 " Highlighting for CoC suggestions
 hi! link CocMenuSel PmenuSel
