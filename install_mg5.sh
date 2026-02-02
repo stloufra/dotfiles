@@ -38,7 +38,7 @@ if [[ ! -f "$key_path" ]]; then
     git submodule update --init --recursive
 
     cd "PLUGIN"
-    ln -s "$key_path/epochX/cudacpp/CODEGEN/PLUGIN"
+    ln -s "$key_path/epochX/cudacpp/CODEGEN/PLUGIN/CUDACPP_SA_OUTPUT"
     echo
 else
     echo "==> Repo already exists at $key_path"
