@@ -15,9 +15,7 @@ cd ~/dotfiles
 - **zsh/**: Zsh configuration and Oh My Zsh setup
 - **vim/**: Vim configuration and plugins
 - **nvim/**: Neovim configuration 
-- **i3/**: i3 window manager configuration
 - **git/**: Git configuration
-- **conda/**: Conda configuration
 - **scripts/**: Useful shell scripts
 
 ## Manual steps after installation
