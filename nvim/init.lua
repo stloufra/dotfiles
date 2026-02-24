@@ -3,7 +3,10 @@ vim.o.relativenumber = true
 vim.o.cursorline = true
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
-vim.opt.expandtab = true
+vim.opt.expandtab = false
+--vim.opt.shiftwidth = 4      -- indentation width
+--vim.opt.tabstop = 4         -- tab = 4 spaces when displayed
+--vim.opt.softtabstop = 4
 vim.opt.backup = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true

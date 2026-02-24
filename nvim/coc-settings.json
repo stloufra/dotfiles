@@ -1,11 +1,20 @@
 {
   "languageserver": {
-    "myServer": {
-      "command": "path/to/server",
-      "args": ["--stdio"],
+    "clangd": {
+      "command": "/opt/homebrew/opt/llvm/bin/clangd",
+      "args": ["--background-index"],
       "filetypes": ["cpp", "c"],
       "rootPatterns": [".git", "compile_commands.json"],
       "initializationOptions": {}
+    },
+
+    "python": {
+      "command": "pyright-langserver",
+      "args": ["--stdio"],
+      "filetypes": ["python"],
+      "rootPatterns": [".git", "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt"],
+      "settings": {}
     }
   }
 }
+
